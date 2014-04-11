@@ -6,6 +6,10 @@ default['forever-service']['type'] = 'initd'
 # ownership of the log directory.
 default['forever-service']['user'] = 'root'
 
+# NODE_ENV
+
+default['forever-service']['node-env'] = 'production'
+
 # Default values for building Node.js from source with no special settings
 # used for the make install step.
 default['forever-service']['node-bin'] = '/usr/local/bin'

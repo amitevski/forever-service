@@ -41,6 +41,8 @@ expect fork
 # Log file path.
 # env LOG="/var/log/my-application.log"
 
+
+env NODE_ENV=<%= node['forever-service']['node-env'] %>
 env NODE_BIN_DIR="<%= node['forever-service']['node-bin'] %>"
 env NODE_PATH="<%= node['forever-service']['node-path'] %>"
 env APPLICATION_DIRECTORY="<%= File.dirname(node['forever-service']['start-script']) %>"
