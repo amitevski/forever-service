@@ -29,6 +29,14 @@ directory logdir do
   not_if { ::File.exists?(logdir) }
 end
 
+file node['forever-service']['log-file-path'] do
+  action :create
+  owner node['forever-service']['user']
+  group node['forever-service']['user']
+  mode 00775
+  not_if { ::File.exists?(node['forever-service']['log-file-path']) }
+end
+
 # Run one of the recipes depending on service type.
 begin
   include_recipe "forever-service::#{node['forever-service']['service-type']}"
